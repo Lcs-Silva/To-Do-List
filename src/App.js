@@ -6,6 +6,7 @@ function App (){
 
   const [list, setList] = useState([]);
   const [input, setInput] = useState('');
+  const [sort, setSort] = useState();
 
   function addItem(){
     if(input !== ''){
@@ -17,6 +18,18 @@ function App (){
     }
   }
 
+  function removeItem(indice){
+    var item = list;
+    item = item.filter(l => l !== indice);
+    setList(item);
+  }
+
+  function sortItem(){
+    var number = Math.floor(Math.random() * list.length);
+    setSort(number);
+
+  }
+
     return (
       <div className="container">
         <h1 id="title">LISTA DE TAREFAS</h1>
@@ -24,10 +37,10 @@ function App (){
         <div className="newTask">
           <input type="text" id="inputTask" placeholder="Digite uma nova tarefa..." value={input} onChange={(event) => setInput(event.target.value)}/>
           <button id="addTask" onClick={addItem}>+</button>
-        </div>    
+        </div> 
 
         {list.map((item, indice) => (
-        <div className="itemList" key={indice}>
+        <div className="itemList" key={indice} onClick={() => removeItem(list[indice])}>
           <span>{item}</span>
         </div>
         ))}
