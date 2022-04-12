@@ -1,6 +1,7 @@
 body{
-    background-image: linear-gradient(90deg, rgb(20, 20, 148), rgb(175, 174, 174));
+    background-color: rgb(63, 74, 79);
     height: 97.8vh;
+    margin-bottom: 100px;
 }
 
 .container{
@@ -19,18 +20,18 @@ body{
     padding: 20px 15px;
     border-radius: 8px;
     box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
-    margin-bottom: 30px;
+    margin-bottom: 45px;
 }
 
 .itemList{
     width: 75%;
     background-color: rgba(255,255,255, 0.2);
     color: white;
-    padding: 5px;
+    padding: 10px;
     border-bottom: 1px solid white;
     font-family: 'Rubik', sans-serif;
-    color: white;
-    font-size: 10px;
+    color:white;
+    font-size: 20px;
 }
 
 .itemList:hover{
@@ -40,8 +41,9 @@ body{
 #title{
     font-family: 'Rubik', sans-serif;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
+    font-weight: bold;
 }
 
 #addTask{
@@ -67,6 +69,7 @@ body{
     padding: 10px 5px;
     width: 450px;
     font-size: 20px;
+    outline: none;
 }
 
 #inputTask::placeholder{

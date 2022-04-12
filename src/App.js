@@ -6,7 +6,6 @@ function App (){
 
   const [list, setList] = useState([]);
   const [input, setInput] = useState('');
-  const [sort, setSort] = useState();
 
   function addItem(){
     if(input !== ''){
@@ -18,16 +17,10 @@ function App (){
     }
   }
 
-  function removeItem(indice){
+  function removeItem(content){
     var item = list;
-    item = item.filter(l => l !== indice);
+    item = item.filter(l => l !== content);
     setList(item);
-  }
-
-  function sortItem(){
-    var number = Math.floor(Math.random() * list.length);
-    setSort(number);
-
   }
 
     return (
@@ -40,7 +33,7 @@ function App (){
         </div> 
 
         {list.map((item, indice) => (
-        <div className="itemList" key={indice} onClick={() => removeItem(list[indice])}>
+        <div className="itemList" key={indice} onClick={() => removeItem(item)}>
           <span>{item}</span>
         </div>
         ))}
